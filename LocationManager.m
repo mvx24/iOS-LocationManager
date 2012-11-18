@@ -60,6 +60,7 @@ static id sharedInstance;
 
 - (void)dealloc
 {
+	[[NSNotificationCenter defaultCenter] removeObserver:self];
 	[currentLocation release];
 	[self.locationManager setDelegate:nil];
 	self.locationManager = nil;
